@@ -26,7 +26,7 @@ async def main():
 
         #time difference
         delta = time_now - obj_word.last_review
-        #In minutes and hours/days
+        #in minutes and hours/days
         minutes = int(delta.total_seconds() // 60)
         hours = minutes // 60
         days = hours // 24
@@ -39,8 +39,8 @@ async def main():
             since = f"{minutes}m"
 
         print(f"#{i:<2} "
-              f"{obj_word.text:<12} "  # word text
-              f"{obj.coefficient_strength:<6}" #coefficient strength
+              f"{obj_word.text:<14} "  # word text
+              f"{obj.coefficient_strength:<6.2f}" #coefficient strength
               f"{obj_word.last_review:%d-%m-%Y %H:%M:%S}  "  # last time repetition
               f"{priority:<8} " 
               f"⏳ {since}")
